@@ -76,7 +76,7 @@
                       <h2 style="color: green;"><?php echo $p['nombre'] ?></h2>
                       <img width="420" height="200" src="data:image/jpg;base64,<?php echo base64_encode($p['imagen']); ?>"/>
                   <?php 
-                       if(isset($_SESSION['rol']) &&$_SESSION['rol']=='adm'){
+                       if(isset($_SESSION['rol'])=='adm'){
                   ?>
                       <div class="botones">
 <!--                          <input type="hidden" name="menu" value="<?php echo $p['tipo_menu'];?>" />-->

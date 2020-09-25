@@ -17,9 +17,7 @@
                     <span>Lun - Vie: 7:00 - 11:30 / Sáb - Dom - Feriados: 7:00 - 17:00</span>
               </div>  
                 <?php 
-                if(!isset($_SESSION)){
-                    session_start();
-                }
+                    if(!isset($_SESSION))session_start ();
                     if(isset($_SESSION['usuario'])){
                         echo "<div class='col cabecera'>"
                             . "<span style='margin-left:30%;'> Bienvenido ". $_SESSION['usuario']."</span>"
@@ -32,7 +30,7 @@
                 ?>
                 <div class="col cabecera">
                     <a id="sesion" href="index.php?c=inicioSesion&a=iniciar">Iniciar Sesión</a>
-                <?php }  ?>
+               <?php }  ?>
               </div>  
           </div>
       </div>
@@ -46,7 +44,7 @@
                         <a href="index.php">Nosotros</a>
                         <ul class="submenu" id="nosotros">
                             <li><a href="index.php?c=index&a=estatica&p=NuestraHistoria">Historia</a></li>
-                            <li><a href="index.php?c=index&a=estatica&p=GaleriaFotos">Galería de Imágenes</a></li>
+                            <li><a href="GaleriaFotos.php">Galería de Imágenes</a></li>
                         </ul>  
                     </li> 
                     <li>
@@ -70,20 +68,23 @@
                     <li>
                         <a href="index.php">Servicios</a>
                         <ul class="submenu" id="servicio">
-                            <li><a href="index.php?c=inicioSesion&a=iniciar">Pedido a Domicilio</a>
+                            <li><a href="pedidosDomicilio.php">Pedido a Domicilio</a>
                                 <ul class="bservicio">
                                     <?php
                                     if(isset($_SESSION['rol'])){
                                         if($_SESSION['rol']=='adm'){
                                     ?>
-                                        <li><a href="index.php?c=pedido&a=mostrar">Crear Pedido</a></li>
-                                        <li><a href="index.php?c=pedido&a=mostrarformulario">Consultar Pedido</a></li>
+                                        <li><a href="index.php?c=usuario&a=mostrarformulario">Pedidos a Domicilio</a></li> 
+                                        <li><a href="index.php?c=usuario&a=mostrarformularioA">Consultar Pedidos</a></li>
+                                        <li><a href="index.php?c=usuario&a=formularioeditar">Modificar Pedido</a></li>
+                                        <li><a href="index.php?c=cliente&a=formularioEliminar">Eliminar Pedido</a></li>
+
                                     <?php
                                         } else if($_SESSION['rol']=='cli'){                                  
                                     ?>
-                                        <li><a href="index.php?c=pedido&a=mostrar">Crear Pedido</a></li>
-                                        <li><a href="index.php?c=pedido&a=mostrarformulario">Consultar Pedido</a></li>
-
+                                        <li><a href="index.php?c=cliente&a=mostrarformulario">Pedidos a Domicilio</a></li>
+                                        <li><a href="index.php?c=usuario&a=formularioeditar">Modificar Pedido</a></li>
+                                         <li><a href="index.php?c=usuario&a=mostrarformularioA">Consultar Pedidos</a></li>
                                     <?php
                                         }
                                     }

@@ -62,7 +62,8 @@
             padding: 30px;
             margin-bottom: 10px;
         }
-    </style>  
+    </style>
+    
   </head>
   <body>
       <div class="fondo">
@@ -76,8 +77,7 @@
                       <h2 style="color: green;"><?php echo $p['nombre'] ?></h2>
                       <img width="420" height="200" src="data:image/jpg;base64,<?php echo base64_encode($p['imagen']);?>"/>
                   <?php 
-        
-                       if(isset($_SESSION['rol']) &&$_SESSION['rol']=='adm'){
+                       if(isset($_SESSION['rol'])=='adm'){
                   ?>
                       <div class="botones">
                           <a id="btn"  href="index.php?c=MenuImagenes&a=eliminar&id=<?php echo $p['id_menu_imagen'];?>">Eliminar</a> 

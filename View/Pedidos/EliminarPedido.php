@@ -42,7 +42,7 @@ if(!isset($_SESSION))session_start ();
             border-radius: 5px;
             padding: 20px;
             background: whitesmoke;
-            width: 40%;
+            width: 70%;
             margin: 0 auto; 
             opacity: 0.9;
             font-family: "arial";
@@ -88,13 +88,14 @@ if(!isset($_SESSION))session_start ();
 
     </style>
   </head>
+  
   <body>
       <div class="fondo">
           <div class="zona">
-              <h1> Pedidos </h1>
+              <h1> Eliminar Pedidos </h1>
           </div>
           <div class="formularios">
-              <form name="formCon" method="POST" action="index.php?c=pedido&a=consultarpedidoA">
+              <form name="formCon" method="POST" action="index.php?c=pedido&a=consultarpedido">
                   <?php  if(isset($_SESSION ['resultado'])){ ?>
                   <input type="text" name="cedula" id="cedu" value="<?php echo  $_SESSION['resultado'];?>"
                   <?php }else{ ?>
@@ -103,14 +104,14 @@ if(!isset($_SESSION))session_start ();
                   <?php } ?>
                   <div class="botones">
                   <input class="btn" type="submit" value="Buscar" style="padding: 5px 35px; margin-right: 5px;"/>
-                 
-               </div>     
+                  <input class="btn"type="reset" name="limpieza" value="Cancelar" style="padding: 5px 27px;"/>
+               </div>      
               </form>
           </div>
-          <?php if(isset($_SESSION['resultado'])){ ?>
+           <?php if(isset($_SESSION['resultado'])){ ?>
               <div class="formularios">
                  
-              <form name="formCon" method="POST" action="index.php?c=usuario&a=inicio">
+              <form name="formCon" method="POST" action="index.php?c=pedido&a=eliminar">
                   
                   <?php  if(isset($_SESSION['resultado'])){ ?>
                     <?php foreach ($resultado as $res){  ?>
@@ -126,15 +127,6 @@ if(!isset($_SESSION))session_start ();
                     <div class="telefono">
                        <label>Telefono:</label>
                        <input type="text" name="cedula" id="cedu" value=" <?php echo $res['telefono'];  ?>"/>
-                  <div class="cedula">
-                      <label>Tipo de pago:</label>
-                      <?php  if($res['id_pago'] == 1){ ?>
-                       <input type="text" name="cedula" id="cedu" value="credito"/>
-                      <?php }else ?>
-                       <?php  if($res['id_pago'] == 2){ ?>
-                       <input type="text" name="cedula" id="cedu" value="efectivo"/>
-                       <?php } ?>
-                  </div>
                        <table >
                            <thead style="border:2px solid black">
                             <tr style="border:2px solid black">
@@ -162,15 +154,18 @@ if(!isset($_SESSION))session_start ();
                        </table>
                        
                   </div>
-
                   <?php } } }  ?>
                    <?php  if(isset($_SESSION['resultado'])){ ?>
-                  <input class="btn" type="submit" value="Salir" style="padding: 5px 35px; margin-right: 5px;"/>
+                  <input class="btn" type="submit" value="Eliminar Pedido" style="padding: 5px 35px; margin-right: 5px;"/>
                   <?php  } } ?>
                   
               </form>
           </div>
       </div>
-      </div>
+      
+      
+      
+      
   </body>
+
 

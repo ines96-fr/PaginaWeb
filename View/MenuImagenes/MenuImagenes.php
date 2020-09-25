@@ -44,8 +44,8 @@
                 border-radius: 5px;
                 box-shadow: 5px 5px 5px grey; 
             }
-        </style>   
-        
+            
+        </style>
     </head>
     <body class="cuerpo">
         <div class="titulo">
@@ -91,6 +91,13 @@
                 </div>        
             </form>  
         <div>
+            <?php 
+                if(isset($_SESSION['mensaje'])){
+                    echo "<p style='color:green'>" .$_SESSION['mensaje'].
+                            "</p>";
+                    unset($_SESSION['mensaje']);
+                }
+            ?>
         </div>
         </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
