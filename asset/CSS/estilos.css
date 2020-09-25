@@ -1,0 +1,204 @@
+
+/*ESTILOS*/
+#logo{
+    border-top: 2px solid limegreen;
+    width: 100%; 
+}
+
+#sesion{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color:white;
+    margin-left: 75%; 
+    text-decoration: none; 
+    font-family: 'arial';
+    font-weight: bold;
+}
+#sesion:hover{
+    background:lightgreen;
+}
+
+
+#nosotros li a, #servicio li a, #bmenu li a{
+    width: 100%;
+    padding-left: 15px;
+}
+.bservicio li a{
+    width: 200%;
+    padding-left: 15px;
+    
+}
+#nosotros li{
+    width: 102.5%;  
+}
+#servicio li{
+    width: 106%;  
+}
+#servicio .bservicio li{
+    width: 150%; 
+}
+#bmenu .bservicio li{
+    width: 150%; 
+}
+#bmenu li{
+    width:105.2%;
+}
+.header .cabecera{
+    margin-top: 5px; 
+    margin-bottom: 1px; 
+    padding: 10px;
+}
+.header .cabecera span{
+    margin-left:20px;
+    font-weight:bold;
+    color:green;
+}
+
+#sesion, .menu > ul{
+    background: green; 
+}
+
+.footer img{
+    padding: 20px;
+}
+
+.footer, .cabecera{
+    background:white; 
+}
+.footer{
+    border-top: 2px solid whitesmoke; 
+    border-bottom: 2px solid whitesmoke;
+    background: whitesmoke;
+    box-shadow: 0px -1px 5px gray;
+}
+
+.footer .col{
+    font-size: 15px;
+    border-right: 1px grey;
+}
+.footer .pie a{
+    text-decoration: none;
+    color:green;
+}
+.direccion, .contactenos, .horarios{
+    padding-top: 60px;
+    color:green;
+}
+
+.derecho .col{
+    border-top: 2px solid green; 
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    box-shadow: 0px -1px 5px gray;
+}
+
+.derecho .col img{
+    margin-right: 1px;
+    padding-right: 0px;
+}
+
+#slider{
+    width:100%; 
+    margin:auto; 
+    overflow: hidden; 
+    
+}
+
+#slider ul{
+    display:flex; 
+    padding: 0; 
+    width: 400%;
+    animation: cambio 20s infinite alternate; 
+    box-shadow: 0px -2px 5px greenyellow; 
+}
+
+#slider ul li{
+    width:100%;
+    list-style: none;
+}
+#slider ul li img{
+    width: 100%;
+    border:2px solid green;
+    
+}
+
+@keyframes cambio{
+    0%{margin-left:0;}
+    20%{margin-left:0;}
+    
+    25%{margin-left:-100%;}
+    45%{margin-left:-100%;}
+    
+    50%{margin-left:-200%;}
+    70%{margin-left:-200%;}
+    
+    75%{margin-left:-300%;}
+    100%{margin-left:-300%;}
+}
+
+
+
+
+
+.menu ul{
+    list-style: none;
+    padding: 0px;
+}
+
+.menu li{
+    line-height: 3rem;
+    position:relative; 
+}
+.nav li ul{
+    position: absolute;
+}
+.menu ul li a{
+
+    color: white;
+    display:block; 
+    padding: 0 6.5em;
+    text-decoration: none;
+    transition: .4s;
+    font-size: 1.1em;
+}
+.nav a:hover{
+    background: lightgreen;
+}
+
+/*.menu ul ul ul{
+    display:none; 
+}*/
+
+/*NIVEL 1 */
+.menu > ul{
+    display: table;
+    width: 100%;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.menu > ul > li{
+   float: left; 
+}
+/*NIVEL 2*/
+.nav li li{
+    background: green;
+    opacity: 0.8;
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .5s;
+} 
+.nav li:hover > ul > li{
+    max-height: 500px;
+    overflow: visible;
+}
+.menu > ul > li > ul{
+    top:100%;
+}
+/*NIVEL 3*/
+.menu ul ul ul{
+    left:100%;
+    top:0; 
+}
