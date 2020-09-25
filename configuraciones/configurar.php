@@ -8,7 +8,7 @@ define('MENUCLIENTE', 'view/Plantillas/MENUCLIENTE.php');
 
 define("SERVIDORBD", "localhost");
 define("PUERTO", "3306");
-define("NOMBREBD", "envueltos");
+define("NOMBREBD", "aplicacion");
 define("USUARIO", "root");
 define("PASSWORD", "");
 
