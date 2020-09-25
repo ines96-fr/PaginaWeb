@@ -5,8 +5,6 @@ class IndexController {
         
     }
     public function inicio(){
-        session_start();
-        unset($_SESSION['resultado']);
         require_once HEADER; 
         require_once SLIDER;
         require_once FOOTER;
